@@ -1,19 +1,33 @@
-# 🛡️ Python File Shield (AES-256 Encryption)
+# File Shield 🛡️
 
-A lightweight Backend tool built in Python to secure sensitive files using Fernet (symmetric encryption). This tool can encrypt and decrypt any file type (Images, PDFs, Text) by handling raw binary data.
+A professional-grade file security utility built in Python. This tool provides robust AES-256 encryption using password-based key derivation (PBKDF2), allowing users to secure individual files or entire directories with a single master password.
 
-## ✨ Features
-- **Symmetric Encryption:** Uses the `cryptography` library for high-security file locking.
-- **Binary Support:** Works on any file format (not just .txt).
-- **Key Management:** Automatically generates and manages a `secret.key` file.
-- **Safe I/O:** Implements a read-process-write pattern to prevent file corruption.
+## 🚀 Key Features
+- **Password-Based Security:** Uses **PBKDF2** (Password-Based Key Derivation Function 2) with 100,000 iterations to generate secure keys.
+- **Symmetric Encryption:** Leverages the industry-standard `cryptography.fernet` (AES) implementation.
+- **Bulk Processing:** Intelligently identifies and processes every file within a directory while ignoring system-critical files like the salt.
+- **Safety Guard:** Implements logic to skip sub-directories and the encryption salt to prevent accidental data loss.
 
 ## 🛠️ Tech Stack
 - **Language:** Python 3.x
-- **Library:** `cryptography` (Fernet)
-- **Concepts:** File I/O, Error Handling, Binary Data Manipulation.
+- **Library:** `cryptography`
+- **Focus Areas:** Information Technology, Cybersecurity, File I/O.
 
-## 🚀 How to Run
-1. Clone the repo: `git clone <your-repo-link>`
-2. Install dependencies: `pip install cryptography`
-3. Run the script: `python main.py`
+## ⚙️ How to Use
+1. **Setup:** Ensure you have the cryptography library installed:
+   ```bash
+   pip install cryptography
+2. **Run:** Execute main.py and enter a Master Password.
+
+3. **Target:** Provide a file path (e.g., my_notes.txt) or a folder path (e.g., ./secret_docs/).
+
+4. **Action:** Choose (1) to lock or (2) to unlock.
+
+## ⚠️ Important Security Note
+This tool relies on the X.salt file.
+
+DO NOT delete X.salt.
+
+DO NOT share your Master Password. If either is lost, the data is mathematically impossible to recover.
+
+Developed as part of my BTech IT Portfolio.
